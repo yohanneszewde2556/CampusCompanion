@@ -11,6 +11,11 @@ const lostAndFoundSchema = new mongoose.Schema({
     required: true,
     enum: ['lost', 'found']
   },
+  category: {
+    type: String,
+    required: true,
+    enum: ['electronics', 'books', 'clothing', 'accessories', 'documents', 'other'],
+  },
   status: {
     type: String,
     default: 'active',
@@ -54,6 +59,8 @@ const lostAndFoundSchema = new mongoose.Schema({
 lostAndFoundSchema.index({ location: '2dsphere' });
 lostAndFoundSchema.index({ title: 'text', description: 'text' });
 lostAndFoundSchema.index({ type: 1, status: 1 });
+lostAndFoundSchema.index({ category: 1 });
+lostAndFoundSchema.index({ reporterId: 1 });
 
 const LostAndFound = mongoose.model('LostAndFound', lostAndFoundSchema);
 module.exports = LostAndFound;

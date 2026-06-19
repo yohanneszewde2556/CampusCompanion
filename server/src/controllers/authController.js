@@ -93,9 +93,23 @@ const refreshToken = async (req, res) => {
   }
 };
 
+// @desc    Get current user
+// @route   GET /api/auth/me
+// @access  Private
+const getCurrentUser = async (req, res) => {
+  res.json({
+    _id: req.user._id,
+    firstName: req.user.firstName,
+    lastName: req.user.lastName,
+    email: req.user.email,
+    role: req.user.role,
+  });
+};
+
 module.exports = {
   registerUser,
   loginUser,
   logoutUser,
-  refreshToken
+  refreshToken,
+  getCurrentUser,
 };

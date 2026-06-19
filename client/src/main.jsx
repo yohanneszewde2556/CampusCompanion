@@ -4,11 +4,17 @@ import App from './App.jsx';
 import './index.css';
 import { Provider } from 'react-redux';
 import { store } from './store';
+import { ThemeProvider } from './context/ThemeContext';
+import AuthInitializer from './components/AuthInitializer';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <ThemeProvider>
+        <AuthInitializer>
+          <App />
+        </AuthInitializer>
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>,
 );

@@ -14,17 +14,21 @@ const io = new Server(server, {
   cors: {
     origin: process.env.CLIENT_URL || 'http://localhost:5173',
     credentials: true,
-  }
+  },
 });
 
+app.set('io', io);
+
 io.on('connection', (socket) => {
-  console.log('A user connected:', socket.id);
-  
-  socket.on('disconnect', () => {
-    console.log('A user disconnected:', socket.id);
+  socket.on('join', (userId) => {
+    if (userId) {
+      socket.join(userId.toString());
+    }
   });
+
+  socket.on('disconnect', () => {});
 });
 
 server.listen(PORT, () => {
-  console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
+  console.log(`Server running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
 });
