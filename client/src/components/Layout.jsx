@@ -12,6 +12,7 @@ const navLinks = [
   { to: '/ai-assistant', label: 'AI Assistant', end: false },
   { to: '/marketplace', label: 'Marketplace', end: false },
   { to: '/study-groups', label: 'Study Groups', end: false },
+  { to: '/announcements', label: 'Announcements', end: false },
 ];
 
 const Layout = () => {

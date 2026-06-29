@@ -203,7 +203,9 @@ const Marketplace = () => {
                        <p className="text-sm text-gray-500 dark:text-gray-400">Seller</p>
                      </div>
                    </div>
-                   <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg shadow-blue-500/30 transition-transform hover:-translate-y-0.5">
+                   <button 
+                     onClick={() => window.location.href = `mailto:${selectedItem.sellerId?.email}?subject=Interested in: ${selectedItem.title}`}
+                     className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl shadow-lg shadow-blue-500/30 transition-transform hover:-translate-y-0.5">
                      Message Seller
                    </button>
                 </div>

@@ -8,6 +8,7 @@ const uploadRoutes = require('./routes/uploadRoutes');
 const aiRoutes = require('./routes/aiRoutes');
 const marketplaceRoutes = require('./routes/marketplaceRoutes');
 const studyGroupRoutes = require('./routes/studyGroupRoutes');
+const announcementRoutes = require('./routes/announcementRoutes');
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use('/api/upload', uploadRoutes);
 app.use('/api/ai-assistant', aiRoutes);
 app.use('/api/marketplace', marketplaceRoutes);
 app.use('/api/study-groups', studyGroupRoutes);
+app.use('/api/announcements', announcementRoutes);
 
 app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'API is running' });

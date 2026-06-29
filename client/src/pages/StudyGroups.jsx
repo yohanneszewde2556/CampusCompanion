@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import api from '../services/api';
 
 const StudyGroups = () => {
@@ -18,8 +19,8 @@ const StudyGroups = () => {
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({ name: '', description: '' });
 
-  // Dummy user ID since we are mocking auth globally for now, but usually we map from Redux
-  const myUserId = "666666666666666666666666";
+  const userInfo = useSelector((state) => state.auth.userInfo);
+  const myUserId = userInfo?._id || "";
 
   useEffect(() => {
     fetchGroups();

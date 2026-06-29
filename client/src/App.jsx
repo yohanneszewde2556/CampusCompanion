@@ -12,6 +12,7 @@ import ModeratorClaims from './pages/ModeratorClaims';
 import AIAssistant from './pages/AIAssistant';
 import Marketplace from './pages/Marketplace';
 import StudyGroups from './pages/StudyGroups';
+import Announcements from './pages/Announcements';
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
             <Route path="/ai-assistant" element={<AIAssistant />} />
             <Route path="/marketplace" element={<Marketplace />} />
             <Route path="/study-groups" element={<StudyGroups />} />
+            <Route path="/announcements" element={<Announcements />} />
           </Route>
         </Routes>
       </div>
