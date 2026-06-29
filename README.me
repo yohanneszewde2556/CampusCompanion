@@ -1,1 +1,70 @@
-"# CampusCompanion"
+# Campus Companion
+
+Campus Companion is a comprehensive, production-quality university platform designed to streamline and modernize campus life. Built on a modern React, Node.js, and MongoDB stack, it integrates various essential campus tools into one unified portal.
+
+## 🚀 Features
+
+- **Authentication:** Secure JWT-based authentication with robust refresh token logic.
+- **Lost & Found:** Features AI-powered Vector Search matching for lost and found items.
+- **AI Student Assistant (Next Phase):** Integration with OpenAI for course document summarization, context-aware studying, and quiz generation.
+- **Marketplace (Planned):** A dedicated hub for buying and selling student items and textbooks.
+- **Study Groups (Planned):** Real-time collaborative learning environments using WebSockets.
+- **Announcements (Planned):** Campus-wide priority announcements system.
+
+## 🛠 Tech Stack
+
+- **Frontend:** React.js, Vite, Tailwind CSS, Context API / Redux.
+- **Backend:** Node.js, Express.js, Socket.IO.
+- **Database:** MongoDB Atlas, Mongoose, Atlas Vector Search.
+- **AI / External:** OpenAI API, Cloudinary.
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- Node.js (v18+)
+- MongoDB Atlas account (or local MongoDB)
+- Cloudinary credentials (for image uploads)
+- OpenAI API key (for the AI Assistant features)
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd CampusCompanion
+   ```
+
+2. **Install server dependencies:**
+   ```bash
+   cd server
+   npm install
+   ```
+
+3. **Install client dependencies:**
+   ```bash
+   cd ../client
+   npm install
+   ```
+
+4. **Configure Environment Variables:**
+   - Create a `.env` in `server/` and add the required environment secrets:
+     ```env
+     PORT=5000
+     MONGO_URI=your_mongodb_connection_string
+     JWT_SECRET=your_jwt_secret
+     JWT_REFRESH_SECRET=your_jwt_refresh_secret
+     CLOUDINARY_CLOUD_NAME=your_cloudinary_name
+     CLOUDINARY_API_KEY=your_cloudinary_api_key
+     CLOUDINARY_API_SECRET=your_cloudinary_secret
+     OPENAI_API_KEY=your_openai_api_key
+     ```
+   - Create a `.env` in `client/` if needed for `VITE_` variables.
+
+5. **Start Development Servers:**
+   - Server: `npm run dev` in the `server` directory.
+   - Client: `npm run dev` in the `client` directory.
+
+## 🌐 Deployment
+
+Please refer to `DEPLOYMENT.md` for detailed instructions on deploying the frontend to platforms like Vercel/Netlify and the backend to platforms like Render/Railway.
